@@ -9,9 +9,9 @@ export default class Home extends Component {
       <Navbar bg="light" variant="light">
         <Navbar.Brand href="#home">Press(ed)</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#about">About</Nav.Link>
-          <Nav.Link href="#donate">Donate</Nav.Link>
+          <Nav.Link href="/charitynav">Donate</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
