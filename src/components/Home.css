@@ -1,6 +1,7 @@
 .h1 {
-    color: white;
-    text-align: center;
-    font-size: large;
-    font-family: initial;
-}
+
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  }
+  

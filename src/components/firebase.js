@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+
 var firebaseConfig = {
     apiKey: "AIzaSyDwfuX34PENeQASunlBUhm4szrCjOz8RUE",
     authDomain: "pressed-c1d0f.firebaseapp.com",
@@ -10,3 +11,8 @@ var firebaseConfig = {
     appId: "1:724452178520:web:7b6f447539ba6ec35f282d",
     measurementId: "G-N305ED04YK"
   };
+
+  //initializes firebase
+  firebase.initializeApp(firebaseConfig);
+
+  export const db = firebase.firestore();
