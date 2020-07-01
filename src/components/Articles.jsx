@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { db } from './firebase';
-import ReactMarkdown from 'react-markdown';
 import Home from './Home';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Container, Accordion} from 'react-bootstrap';
 
 export default class Articles extends Component {
     constructor() {
@@ -13,18 +12,17 @@ export default class Articles extends Component {
 
         }
     }
-
+    //gets all articles from firebase db
     componentDidMount() {
-        // const actualContent = content.html();
         db.collection('articles').get()
             .then((querySnapshot) => {
                 let newArticles = [];
                 querySnapshot.forEach(doc => {
-                    // console.log(doc.data().content);
-                    let articleString = doc.data().content.replace(/\\n/g, '<br><br />') 
+                    //using regex 
+                    let articleString = doc.data().content.replace(/\\n/g, '<br><br />')
                     articleString = articleString.replace(/\\/g, " ")
-                    console.log(articleString);
-                    const newObj = {...doc.data(), content: articleString}
+                    // console.log(articleString);
+                    const newObj = { ...doc.data(), content: articleString }
                     newArticles.push(newObj);
 
                 })
@@ -40,19 +38,19 @@ export default class Articles extends Component {
             <div>
                 <Home />
                 {this.state.articles.map(article => {
-                    return <div>
-                        <Container >
-                        <Card className= "bg-dark text-white" >
-                            <Card.Header as="h5">{article.title}</Card.Header>
-                            <Card.Body>
-                                <Card.Title>Special title treatment</Card.Title>
-                                <Card.Text dangerouslySetInnerHTML={{__html: article.content}}/>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-
-                        </Card>
+                    return (
+                    <Container >
+                            <Accordion defaultActiveKey="0">
+                                <Card className="bg-dark text-white">
+                                    <Accordion.Toggle as={Card.Header} eventKey="0">{article.title}</Accordion.Toggle>
+                                    <Accordion.Collapse eventKey="0">
+                                        <Card.Body><Card.Text dangerouslySetInnerHTML={{ __html: article.content }} /></Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                            </Accordion>
                         </Container>
-                    </div>
+                    )
+                    
                 })}
             </div>
         )

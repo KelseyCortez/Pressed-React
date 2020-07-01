@@ -3,6 +3,8 @@
 }
 body {
   background-image: url('./components/bw.jpg');
+  /* background-repeat: inherit; */
+  /* background-size: cover; */
   color: white;
   text-align: center;
 }
