@@ -8,38 +8,33 @@ export default class CharityNav extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { 
+        this.state = {
             charity: [],
         }
     }
     componentDidMount() {
-        console.log('hello?');
-        //fetch works in the network tab just need to find a way to render to the page effectively.
         fetch(`https://api.data.charitynavigator.org/v2/organizations/?app_id=${API_ID}&app_key=${API_KEY}&rated=1&categoryName='Human and Civil Rights'`)
             .then(res => res.json())
             .then(data => {
-                return {
+                this.setState({
                     charity: data
-                }
-            //    this.setState ({ 
-            //        charity : data 
-            //    })
-               
+                })
+
             })
-           
+
     }
 
     render() {
         return (
             <div>
-                <Home/>
+                <Home />
 
                 {this.state.charity.map((charity, index) => {
                     return (
-                        <CharityCard charity={charity} key={index}/>
-                        )
-                
-            })}
+                        <CharityCard charity={charity} key={index} />
+                    )
+
+                })}
         )
             </div>
         )

@@ -6,7 +6,7 @@ export default class CharityCard extends Component {
     render() {
         return (
             <div>
-                <Container fluid>
+                <Container>
                     <Table responsive striped bordered hover variant="dark">
                         <thead>
                             <tr>
@@ -20,7 +20,7 @@ export default class CharityCard extends Component {
                             <tr>
                                 <td>{this.props.charity.charityName}</td>
                                 <td>{this.props.charity.mission}</td>
-                                <td>{this.props.charity.currentRating}</td>
+                                <td>{this.props.charity.currentRating.rating}</td>
                                 <td><a href={this.props.charity.charityNavigatorURL}>Donate</a></td>
                             </tr>
                         </tbody>
