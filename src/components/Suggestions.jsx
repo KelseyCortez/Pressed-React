@@ -8,6 +8,7 @@ export default class Suggestions extends Component {
         idea: '',
         notSubmitted: true,
     }
+
     handleSubmit = (e) => {
         e.preventDefault();
         db.collection('suggestions').add({
@@ -17,15 +18,15 @@ export default class Suggestions extends Component {
         this.setState({
             notSubmitted: false,
         })
-
-
     }
+
     handleChange = (e) => {
         const { value, name } = e.target;
         this.setState({
             [name]: value
         })
     }
+    
     render() {
         return (
             <Container className="bg-dark text-white">
@@ -39,13 +40,15 @@ export default class Suggestions extends Component {
                         <Form.Control as="textarea" rows="3" placeholder="Ideas go here..." name='idea' value={this.state.idea} onChange={this.handleChange} />
                     </Form.Group>
                     <Button variant="light" type='submit'>Submit</Button>
-                </Form> 
-                : 
-                 <Card>
-                     
-                     </Card>}
-                
-                
+                </Form>
+                    :
+                    <Card className="bg-dark text-white">
+                        <Card.Body>
+                            <Card.Subtitle >Thanks for your feedback!</Card.Subtitle>
+                            <Card.Link href="/">Home</Card.Link>
+                            <Card.Link href="/charitynav">Donate</Card.Link>
+                        </Card.Body>
+                    </Card>}
             </Container>
         )
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { db } from './firebase';
-import { Card, Container, Accordion} from 'react-bootstrap';
+import { Card, Container, Accordion } from 'react-bootstrap';
 
 export default class Articles extends Component {
     constructor() {
@@ -30,13 +30,12 @@ export default class Articles extends Component {
             })
     }
 
-
     render() {
         return (
             <div>
                 {this.state.articles.map((article, index) => {
                     return (
-                    <Container key={index} >
+                        <Container key={index} >
                             <Accordion>
                                 <Card className="bg-dark text-white">
                                     <Accordion.Toggle as={Card.Header} eventKey="0">{article.title}</Accordion.Toggle>
@@ -47,7 +46,7 @@ export default class Articles extends Component {
                             </Accordion>
                         </Container>
                     )
-                    
+
                 })}
             </div>
         )
