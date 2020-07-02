@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { db } from './firebase';
-import Home from './Home';
 import { Card, Container, Accordion} from 'react-bootstrap';
 
 export default class Articles extends Component {
@@ -18,7 +17,7 @@ export default class Articles extends Component {
             .then((querySnapshot) => {
                 let newArticles = [];
                 querySnapshot.forEach(doc => {
-                    //using regex 
+                    //using regex for formatting the string from the database
                     let articleString = doc.data().content.replace(/\\n/g, '<br><br />')
                     articleString = articleString.replace(/\\/g, " ")
                     // console.log(articleString);
@@ -36,10 +35,9 @@ export default class Articles extends Component {
     render() {
         return (
             <div>
-                <Home />
-                {this.state.articles.map(article => {
+                {this.state.articles.map((article, index) => {
                     return (
-                    <Container >
+                    <Container key={index} >
                             <Accordion>
                                 <Card className="bg-dark text-white">
                                     <Accordion.Toggle as={Card.Header} eventKey="0">{article.title}</Accordion.Toggle>

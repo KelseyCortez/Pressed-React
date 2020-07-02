@@ -1,6 +1,15 @@
 .App {
   text-align: center;
+
 }
+.jumbotron{
+	background-image: url('./components/faces.png');
+  background-size: cover;
+  color: black;
+
+} 
+
+
 body {
   background-image: url('./components/bw.jpg');
   /* background-repeat: inherit; */
@@ -23,11 +32,3 @@ body {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
