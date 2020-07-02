@@ -24,8 +24,8 @@ export default class Suggestions extends Component {
     }
     render() {
         return (
-            <Container>
-                <Form onSubmit={this.handleSubmit}>
+            <Container className="bg-dark text-white">
+                <Form  onSubmit={this.handleSubmit}>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="name" name='name' value={this.state.name} onChange={this.handleChange} />
@@ -34,7 +34,7 @@ export default class Suggestions extends Component {
                         <Form.Label>Suggestion</Form.Label>
                         <Form.Control as="textarea" rows="3" placeholder="Ideas go here..." name='idea' value={this.state.idea} onChange={this.handleChange} />
                     </Form.Group>
-                    <Button type='submit'>Submit</Button>
+                    <Button variant="light" type='submit'>Submit</Button>
                 </Form>
             </Container>
         )

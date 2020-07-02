@@ -3,15 +3,15 @@
 
 }
 .jumbotron{
-	background-image: url('./components/faces.png');
+	background-color: grey;
   background-size: cover;
-  color: black;
+  /* color: black; */
 
 } 
 
 
 body {
-  background-image: url('./components/bw.jpg');
+  background-image: url('./components/faces.png');
   /* background-repeat: inherit; */
   /* background-size: cover; */
   color: white;

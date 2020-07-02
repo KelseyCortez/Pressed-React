@@ -6,7 +6,6 @@ import CharityNav from './components/CharityNav';
 import Articles from './components/Articles';
 import Jumbotron from './components/Jumbotronheader';
 import Suggestions  from './components/Suggestions';
-// import { Nav, Navbar, Form, Button, FormControl } from 'react-bootstrap';
 
 
 function App() {
@@ -20,8 +19,7 @@ function App() {
         <Route path='/charitynav' component={CharityNav}></Route>
         <Route path='/articles' component={Articles}></Route>
         <Route path='/suggestions' component={Suggestions}></Route>
-
-      </Switch>
+        </Switch>
       </BrowserRouter>
       
     </div>
