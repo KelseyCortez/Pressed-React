@@ -40,7 +40,7 @@ export default class Articles extends Component {
                 {this.state.articles.map(article => {
                     return (
                     <Container >
-                            <Accordion defaultActiveKey="0">
+                            <Accordion>
                                 <Card className="bg-dark text-white">
                                     <Accordion.Toggle as={Card.Header} eventKey="0">{article.title}</Accordion.Toggle>
                                     <Accordion.Collapse eventKey="0">
