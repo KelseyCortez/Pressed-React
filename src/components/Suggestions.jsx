@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import { db } from './firebase';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Container, Form, Button, Card } from 'react-bootstrap';
 
 export default class Suggestions extends Component {
     state = {
         name: '',
         idea: '',
+        notSubmitted: true,
     }
     handleSubmit = (e) => {
         e.preventDefault();
         db.collection('suggestions').add({
             name: this.state.name,
             idea: JSON.stringify(this.state.idea),
-        });
+        })
+        this.setState({
+            notSubmitted: false,
+        })
 
 
     }
@@ -25,7 +29,7 @@ export default class Suggestions extends Component {
     render() {
         return (
             <Container className="bg-dark text-white">
-                <Form  onSubmit={this.handleSubmit}>
+                {this.state.notSubmitted ? <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="name" name='name' value={this.state.name} onChange={this.handleChange} />
@@ -35,7 +39,13 @@ export default class Suggestions extends Component {
                         <Form.Control as="textarea" rows="3" placeholder="Ideas go here..." name='idea' value={this.state.idea} onChange={this.handleChange} />
                     </Form.Group>
                     <Button variant="light" type='submit'>Submit</Button>
-                </Form>
+                </Form> 
+                : 
+                 <Card>
+                     
+                     </Card>}
+                
+                
             </Container>
         )
     }
