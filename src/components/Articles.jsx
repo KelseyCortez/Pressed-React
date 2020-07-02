@@ -20,7 +20,6 @@ export default class Articles extends Component {
                     //using regex for formatting the string from the database
                     let articleString = doc.data().content.replace(/\\n/g, '<br><br />')
                     articleString = articleString.replace(/\\/g, " ")
-                    // console.log(articleString);
                     const newObj = { ...doc.data(), content: articleString }
                     newArticles.push(newObj);
 
