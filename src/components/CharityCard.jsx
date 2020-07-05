@@ -24,11 +24,10 @@ export default class CharityCard extends Component {
                                 <td><a href={this.props.charity.charityNavigatorURL}>Donate</a></td>
                             </tr>
                         </tbody>
-    
                     </Table>
                 </Container>
             </div>
-    
-    )
-}
+
+        )
+    }
 }
