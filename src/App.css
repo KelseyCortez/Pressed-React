@@ -12,8 +12,6 @@
 
 body {
   background-image: url('./components/faces.png');
-  /* background-repeat: inherit; */
-  /* background-size: cover; */
   color: white;
   text-align: center;
 }
