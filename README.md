@@ -24,7 +24,7 @@ React, Javascript, Google Firebase Database, React-Bootstrap, and CSS.
 ## Next Steps
 
 Ideally, I would like to continue expanding the historical data.
-I'd like to add user login where you can like, share, and save certain articles.
+I'd like to add user authentication where you can like, share, and save certain articles.
 
 
 ## Available Scripts
