@@ -26,14 +26,14 @@ export default class Suggestions extends Component {
             [name]: value
         })
     }
-    
+
     render() {
         return (
             <Container className="bg-dark text-white">
                 {this.state.notSubmitted ? <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="name" name='name' value={this.state.name} onChange={this.handleChange} />
+                        <Form.Control type="name" placeholder="Name goes here..." name='name' value={this.state.name} onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Suggestion</Form.Label>
@@ -48,7 +48,7 @@ export default class Suggestions extends Component {
                             <Card.Link href="/">Home</Card.Link>
                             <Card.Link href="/charitynav">Donate</Card.Link>
                         </Card.Body>
-                    </Card>}
+                    </Card>  }
             </Container>
         )
     }

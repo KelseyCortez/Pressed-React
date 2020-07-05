@@ -21,7 +21,7 @@ export default class CharityCard extends Component {
                                 <td>{this.props.charity.charityName}</td>
                                 <td>{this.props.charity.mission}</td>
                                 <td>{this.props.charity.currentRating.rating}</td>
-                                <td><a href={this.props.charity.charityNavigatorURL}>Donate</a></td>
+                                <td><a target='_blank' href={this.props.charity.charityNavigatorURL}>Donate</a></td>
                             </tr>
                         </tbody>
                     </Table>
