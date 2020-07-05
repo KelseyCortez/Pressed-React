@@ -17,6 +17,10 @@ Using React, Firebase, and Charity Navigator API, You can read about different t
 
 React, Javascript, Google Firebase Database, React-Bootstrap, and CSS.
 
+
+<img width="1439" alt="Screen Shot 2020-07-05 at 3 35 14 PM" src="https://user-images.githubusercontent.com/62561772/86543235-b2d2b700-beea-11ea-87c4-9e52cbb5dc5b.png">
+
+
 ## Next Steps
 
 Ideally, I would like to continue expanding the historical data.
