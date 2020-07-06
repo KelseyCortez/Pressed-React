@@ -26,7 +26,10 @@ React, Javascript, Google Firebase Database, React-Bootstrap, and CSS.
 ## Next Steps
 
 Ideally, I would like to continue expanding the historical data.
-I'd like to add user authentication where you can like, share, and save certain articles.
+Adding user authentication where you can like, share, and save articles of the user's choosing.
+Adding a source page to cite all of the articles in a more concise manner.
+Adding a map where you can pinpoint a location see its history and timeline.
+
 
 
 ## Available Scripts
