@@ -22,8 +22,7 @@ function App() {
         <Route path='/suggestions' component={Suggestions}></Route>
         </Switch>
       </BrowserRouter>
-      
-    </div>
+      </div>
   )
 }
 
